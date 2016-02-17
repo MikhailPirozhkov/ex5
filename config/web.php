@@ -7,10 +7,10 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
-        //'urlManager' => [
-        //  'showScriptName' => false,
-        //  'enablePrettyUrl' => true
-        //],
+        'urlManager' => [
+          'showScriptName' => false,
+          'enablePrettyUrl' => true
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '2-FpLhUY4a-9tEgKTZqms1yoLgRGlQOI',
