@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\component\WLang;
 
 AppAsset::register($this);
 ?>
@@ -33,7 +34,7 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    
+    WLang::widget();
     NavBar::end();
     ?>
 

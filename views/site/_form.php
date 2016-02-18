@@ -14,9 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'task')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'date0')->input('date') ?>
+    <?= $form->field($model, 'date0')->textInput() ?>
 
-    <?= $form->field($model, 'execute')->checkbox() ?>
+    <?= $form->field($model, 'execute')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

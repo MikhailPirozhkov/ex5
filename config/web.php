@@ -2,18 +2,41 @@
 
 $params = require(__DIR__ . '/params.php');
 
+$sourceLanguage='en';
+$language='ru-RU';
+//Yii::$app->language = self::$current->local;
+
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
+        'language'=>'ru-RU',
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@messages',
+                    'sourceLanguage' => 'en',
+                    'fileMap' => [
+                        //'main' => 'main.php',
+                    ],
+                ],
+            ],
+        ],
         'urlManager' => [
-          'showScriptName' => false,
-          'enablePrettyUrl' => true
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'class'=>'app\components\LangUrlManager',
+            'rules'=>[
+                '/' => 'site/index',
+                '<controller:\w+>/<action:\w+>/*'=>'<controller>/<action>',
+            ]
         ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '2-FpLhUY4a-9tEgKTZqms1yoLgRGlQOI',
+            'class' => 'app\components\LangRequest',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
